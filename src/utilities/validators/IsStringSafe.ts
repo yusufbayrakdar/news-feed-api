@@ -1,4 +1,4 @@
-import {ValidationArguments, ValidationOptions, registerDecorator} from "class-validator";
+import {ValidationOptions, registerDecorator} from "class-validator";
 
 import {isStringSafeAndValid} from "../helpers";
 
@@ -11,8 +11,8 @@ export function IsStringSafe(onlyAlpha?: boolean, validationOptions?: Validation
       constraints: [onlyAlpha],
       options: validationOptions,
       validator: {
-        validate(field: string, args: ValidationArguments) {
-          return isStringSafeAndValid(field, args.constraints[0]);
+        validate(field: string) {
+          return isStringSafeAndValid(field, onlyAlpha);
         },
         defaultMessage() {
           return "$property has invalid text";

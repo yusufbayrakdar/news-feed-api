@@ -17,12 +17,12 @@ export class RegisterAuthDto {
   @IsString()
   @IsNotEmpty()
   @Length(3, 250)
-  @IsStringSafe()
+  @IsStringSafe(true)
   firstName: string;
 
   @IsString()
   @IsNotEmpty()
   @Length(3, 250)
-  @IsStringSafe()
+  @IsStringSafe(true)
   lastName: string;
 }

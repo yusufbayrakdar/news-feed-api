@@ -1,4 +1,5 @@
 import {Module} from "@nestjs/common";
+import {JwtService} from "@nestjs/jwt";
 import {MongooseModule} from "@nestjs/mongoose";
 
 import {UserController} from "./user.controller";
@@ -17,7 +18,7 @@ import {UserSchema} from "./models/user.schema";
     ])
   ],
   controllers: [UserController],
-  providers: [UserService],
+  providers: [UserService, JwtService],
   exports: [UserService]
 })
 export class UserModule {}

@@ -16,6 +16,8 @@ export class UserService {
   async findByLogin(userDTO: LoginAuthDto) {
     const {email, password} = userDTO;
     const user = await this.userModel.findOne({email}).select(UserSelects.basic + " password");
+
+    if (!user) throw new ExceptionBadRequest("Email or password is invalid");
     const isAuthorized = await bcrypt.compare(password, user.password);
 
     if (isAuthorized) {
@@ -23,8 +25,12 @@ export class UserService {
     } else throw new ExceptionBadRequest("Email or password is invalid");
   }
 
-  findById(_id: string) {
+  findById(_id: String) {
     return this.userModel.findById(_id).select(UserSelects.basic);
+  }
+
+  findByIdAndUpdate(_id: String, updateQuery) {
+    return this.userModel.findByIdAndUpdate(_id, updateQuery);
   }
 
   checkExist(fields: Object) {

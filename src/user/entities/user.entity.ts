@@ -6,9 +6,10 @@ export class User extends Document {
   lastName: string;
   email: string;
   password: string;
+  categories: Array<String>;
   lastLoginDate: Date;
 }
 
 export const UserSelects = {
-  basic: "firstName lastName email lastLoginDate"
+  basic: "firstName lastName email categories lastLoginDate"
 };

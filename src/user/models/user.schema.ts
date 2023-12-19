@@ -22,6 +22,7 @@ export const UserSchema = new mongoose.Schema(
       lowercase: true,
       index: true
     },
+    categories: Array<String>,
     password: {type: String, set: toHashPassword, select: false},
     lastLoginDate: Date
   },

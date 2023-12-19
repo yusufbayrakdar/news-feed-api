@@ -1,3 +1,34 @@
+# News Feed API
+
+Elevate your news feed experience with our robust API built on NodeJS and NestJS. NestJS empowers our NodeJS implementation, providing a solid foundation for seamless development. With the integrated 'class-validator,' error control is effortlessly managed, allowing you to focus on the core aspects of development.
+
+## Key Features:
+
+- **Diverse News Sources:**
+  - Enjoy content from reputable sources such as The Guardian and The New York Times.
+
+- **Intelligent Query Generation:**
+  - Our API intelligently organizes incoming requests, crafting bespoke queries for selected news APIs. This ensures a tailored and relevant news feed for each user.
+
+- **Personalized User Experience:**
+  - For logged-in users without specific queries, the API dynamically selects random categories from their saved preferences. This curated approach enhances the user's homepage, making it more engaging and personalized.
+
+## Configuration:
+
+To seamlessly integrate our API into your project, create a `.env` file with the following parameters:
+
+```env
+NODE_ENV=[development|production]
+PORT=[Number]
+MONGO_URI=[String]
+MONGO_URI_DEV=[String]
+THE_GUARDIAN_API_KEY=[String]
+NEW_YORK_TIMES_API_KEY=[String]
+SECRET_KEY=[String]
+```
+
+Experience the future of news feed APIs – simple, dynamic, and tailored to your preferences.
+
 <p align="center">
   <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="200" alt="Nest Logo" /></a>
 </p>
